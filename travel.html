@@ -1,0 +1,93 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta chars="utf-8" />
+    <title>VentureQuest LLC</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="initmap;">
+    <!-- header -->
+    <header role="banner">
+        <!-- banner -->
+        <div class="banner">
+        <h1 style="text-align:center">VentureQuest LLC</h1>
+        </div>
+        <!-- nav --> 
+        <nav id="menu" role="navigation">
+            <div class="topnav" id="myTopnav">
+                <a href="index.html"><img src="images/home.png"></a>
+                <a href="#">Travel</a>
+                <a href="links.html">Links</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </div>   
+        </nav>
+    </header>
+    <!-- main content --> 
+    <h3>Dive Destinations</h3>
+    <div id="map"></div>
+     <script>
+        function objLocation(strLocName, decLat, decLng, intYear) {
+            this.strLocName = strLocName;
+            this.decLat = decLat;
+            this.decLng = decLng;
+            this.intYear = intYear;
+        }
+         
+        function initMap() {
+            var arrMyLocs = [];
+            arrMyLocs[0] =  new objLocation("Aquatrec",40.806,-96.681,2017);
+            arrMyLocs[1] =  new objLocation("Grand Cayman",19.30,-81.24,2001);
+            arrMyLocs[2] =  new objLocation("Maui, Hawaii",20.80,-156.33,2003);
+            arrMyLocs[3] =  new objLocation("Table Rock Lake, Missouri",36.59,-93.32,2003);
+            arrMyLocs[4] =  new objLocation("Ambergris Caye, Belize",18.00,-87.94,2004);
+            arrMyLocs[5] =  new objLocation("Maui, Hawaii",20.80,-156.33,2005)
+            arrMyLocs[6] =  new objLocation("Isle Royale, Michigan",47.99,-88.90,2006);
+            arrMyLocs[7] =  new objLocation("Ambergris Caye, Belize",18.00,-87.94,2007);
+            arrMyLocs[8] =  new objLocation("Isle Royale, Michigan",47.99,-88.90,20107);
+            arrMyLocs[9] =  new objLocation("Fajardo, Puerto Rico",18.325,-65.65,2010);
+            arrMyLocs[10] =  new objLocation("Isle Royale, Michigan",47.99,-88.90,2011);
+            arrMyLocs[11] =  new objLocation("Cozumel, Mexico",20.42,-86.92,2013);
+            arrMyLocs[12] =  new objLocation("Taormina, Sicily",37.851,15.28,2014);
+            arrMyLocs[13] =  new objLocation("Virgin Gorda, BVI",18.49,-64.40,2014);
+            arrMyLocs[14] =  new objLocation("Bonaire",12.20,-68.26,2015);
+            arrMyLocs[15] =  new objLocation("Sandy Channel, Nebraska",40.668,-99.37,2015);
+                
+            var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 2,
+            center: {lat: arrMyLocs[0].decLat, lng: arrMyLocs[0].decLng},
+        });
+         
+        for (i = 0; i < arrMyLocs.length; i++) { 
+            var contentString = '<div id="content">'+
+            '  <div id="siteNotice"></div>'+
+            '  <h4 id="firstHeading" class="firstHeading">' + arrMyLocs[i].strLocName + '</h4>'+
+            '  <div id="bodyContent"></div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString   
+        });
+            var marker = new google.maps.Marker({
+                position: {lat: arrMyLocs[i].decLat, lng: arrMyLocs[i].decLng},
+              map: map
+            });
+
+            marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+        }
+      }
+         
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?&callback=initMap">
+    </script>
+    <!-- /main content -->
+    <!-- footer -->
+    <!-- /footer -->
+    <!-- scripts -->
+    <script src="script.js"></script>
+    </body>
+</html>

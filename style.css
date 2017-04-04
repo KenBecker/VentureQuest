@@ -1,0 +1,83 @@
+/* styles */
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;   
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+    overflow: scroll;
+    overflow-x: hidden;    
+}
+
+.banner{
+    background-color: #2f2aa5;
+    color: lightgray;
+    padding: 0;
+    margin: 0px auto;
+    width:100%;
+    height: 10%;
+    overflow: hidden;
+    background-size: cover;
+    
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #2f2aa5;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1px 16px 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: lightgray;
+}
+
+.topnav a img{
+    width: 35px;  
+}
+
+.link a img {
+margin-left: 100px;
+ padding: 10px 100px;   
+    
+
+}
+
+#map_wrapper {
+    height: 400px;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
+}
+      #map {
+        height: 400px;
+        width: 80%;
+        margin: 0 auto 0 auto;
+       }
